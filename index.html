@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8"/>
+        <title>PredictableContextPrior</title>
+        <link rel="stylesheet" href="./style.css">
+        <script type="text/javascript" src="./gb3d_bundle.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            <div class="navbar-menu">
+              <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+                <a class="navbar-item" href="https://niessnerlab.org/members/barbara_roessle/profile.html">
+                <span class="icon">
+                    <i class="fas fa-home"></i>
+                </span>
+                </a>
+          
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                    More Research
+                  </a>
+                  <div class="navbar-dropdown">
+                    <a class="navbar-item" href="https://mabaorui.github.io/">
+                        Personal Web Pages
+                    </a>
+                    <a class="navbar-item" href="https://github.com/mabaorui/NeuralPull">
+                        NeuralPull (ICML 2021)
+                    </a>
+                    <a class="navbar-item" href="https://mabaorui.github.io/-OnSurfacePrior_project_page/">
+                        OnSurfacePrior (CVPR 2022)
+                    </a>
+                    <a class="navbar-item" href="https://mabaorui.github.io/PredictableContextPrior_page/">
+                        PredictableContextPrior (CVPR 2022)
+                    </a>
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+          </nav>
+        <div class="container">
+            <div class="paper-title">
+                <div class="col">
+                    <div class="row"> <h1 class="short-title"> PredictableContextPrior </h1> </div>
+                    <div class="row"> <h3 class="long-title"> Surface Reconstruction from Point Clouds by Learning Predictive Context Priors </h3> </div>
+                    <div class="row"> <p class="conference-label"> CVPR 2022 </p> </div>
+                </div>
+            </div>
+
+            <div class="authors-list">
+                <div class="row">
+                    <div class="col">
+                        <div class="row"> <p class="author-name"><a href="https://mabaorui.github.io/">Baorui Ma</a><sup>1</sup></p> </div>
+                        
+                    </div>
+                    <div class="col">
+                        <div class="row"> <p class="author-name"><a href="https://yushen-liu.github.io/">Yu-Shen Liu</a><sup>1</sup></p> </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="row"> <p class="author-name"><a href="https://www.cs.umd.edu/~zwicker/">Matthias Zwicker</a><sup>2</sup></p></div>
+                    </div>
+                    <div class="col">
+                        <div class="row"> <p class="author-name"><a href="https://h312h.github.io/">Zhizhong Han</a><sup>3</sup></p> </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="row"> <p class="affiliation"><sup>1</sup>School of Software, BNRist,Tsinghua University</p> </div>
+                    </div>
+                    <div class="col">
+                    <div class="row"> <p class="affiliation"><sup>2</sup>University of Maryland</p> </div>
+                    </div>
+                    <div class="col">
+                        <div class="row"> <p class="affiliation"><sup>3</sup>Wayne State University</p> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-link">
+                <div class="row">
+                    <div class="col">
+                        <a href="https://github.com/mabaorui/PredictableContextPrior">
+                            <img class="resource-icon" src="./images/code.png" alt="code icon">
+                            <p class="resource-text">Code</p>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="https://arxiv.org/abs/2204.11015">
+                            <img class="resource-icon" src="./images/paper.png" alt="paper icon">
+                            <p class="resource-text">Paper</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro-images">
+                <div class="row">
+                    <img class="abstract-img1" src="./images/Overview2.png" alt="abstract image"> 
+                </div>
+            </div>
+
+            <section class="section">
+                <div class="container is-max-desktop">
+                      <!-- Paper video. -->
+                      <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                          <h2 class="title is-3">Video</h2>
+                          <div class="video">
+                            <video width="100%" height="100%" controls autoplay loop>
+                                <source src="./videos/PredictableContextPrior.mp4" type="video/mp4"/>
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        </div>
+                      </div>
+                      <!--/ Paper video. -->
+                    
+                  <br>
+                  <!-- Abstract. -->
+                  <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                      <h2 class="title is-3">Abstract</h2>
+                      <div class="content has-text-justified">
+                        <p>
+                            Surface reconstruction from point clouds is vital for 3D computer vision. State-of-the-art methods leverage large datasets to first learn local context priors that are represented as neural network-based signed distance functions (SDFs) with some parameters encoding the local contexts. To reconstruct a surface at a specific query location at inference time, these methods then match the local reconstruction target by searching for the best match in the local prior space (by optimizing the parameters encoding the local context) at the given query location. However, this requires the local context prior to generalize to a wide variety of unseen target regions, which is hard to achieve. To resolve this issue, we introduce Predictive Context Priors by learning Predictive Queries for each specific point cloud at inference time. Specifically, we first train a local context prior using a large point cloud dataset similar to previous techniques. For surface reconstruction at inference time, however, we specialize the local context prior into our Predictive Context Prior by learning Predictive Queries, which predict adjusted spatial query locations as displacements of the original locations. This leads to a global SDF that fits the specific point cloud the best. Intuitively, the query prediction enables us to flexibly search the learned local context prior over the entire prior space, rather than being restricted to the fixed query locations, and this improves the generalizability. Our method does not require ground truth signed distances, normals, or any additional procedure of signed distance fusion across overlapping regions. Our experimental results in surface reconstruction for single shapes or complex scenes show significant improvements over the state-of-the-art under widely used benchmarks.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!--/ Abstract. -->
+                </div>
+              </section>
+
+            <div class="view-3D">
+                <p class="view-3D-title">
+                    Results:
+                </p>
+                <div>
+                    <h2><strong>Visual comparison with Point2Surf [1] and Neural-pull [2] under ABC dataset.</strong></h2>
+                    
+                    <table class="dataintable">
+                    <tr>
+                    <th style="width:33%;">Point2Surf</th>
+                    <th style="width:33%;">Neural-pull</th>
+                    <th style="width:33%;">Ours</th>
+                    </tr>
+                    
+                    <tr>
+                    <td>
+                        <model-viewer alt="View reconstruction results in 3D" src="./objects/abc1_p2s.glb" exposure="0.3" auto-rotate camera-controls></model-viewer>
+                    </td>
+                    <td>
+                        <model-viewer alt="View reconstruction results in 3D" src="./objects/abc1_np.glb" exposure="0.3" auto-rotate camera-controls></model-viewer>
+                    </td>
+                    <td>
+                        <model-viewer alt="View reconstruction results in 3D" src="./objects/abc1_ours.glb" exposure="0.3" auto-rotate camera-controls></model-viewer>
+                    </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <model-viewer alt="View reconstruction results in 3D" src="./objects/abc2_p2s.glb" exposure="0.3" auto-rotate camera-controls></model-viewer>
+                        </td>
+                        <td>
+                            <model-viewer alt="View reconstruction results in 3D" src="./objects/abc2_np.glb" exposure="0.3" auto-rotate camera-controls></model-viewer>
+                        </td>
+                        <td>
+                            <model-viewer alt="View reconstruction results in 3D" src="./objects/abc2_ours.glb" exposure="0.3" auto-rotate camera-controls></model-viewer>
+                        </td>
+                    </tr>
+
+                    </table>
+                </div>
+
+                <div>
+                    <h2><strong>We reconstruct highly accurate surfaces from 300K points under FAMOUS dataset.</strong></h2>
+                    
+                    <table class="dataintable">
+                    <tr>
+                    <th style="width:50%;">Liberty</th>
+                    <th style="width:50%;">Dragon</th>
+                    </tr>
+                    
+                    <tr>
+                    <td>
+                        <model-viewer alt="View reconstruction results in 3D" src="./objects/Liberty_ours.glb" exposure="0.3" auto-rotate camera-controls></model-viewer>
+                    </td>
+                    <td>
+                        <model-viewer alt="View reconstruction results in 3D" src="./objects/Dragon_ours.glb" exposure="0.3" auto-rotate camera-controls></model-viewer>
+                    </td>
+                    </tr>
+
+                    
+                    </table>
+                </div>
+
+                <div>
+                    <h2><strong>Surface reconstruction of a real scanned scene with texture.</strong></h2>
+                    
+                    <table class="dataintable">
+                    <tr>
+                    <th style="width:100%;">Input raw point cloud scanned by LiDAR Sensors</th>
+                    </tr>
+                    
+                    <tr>
+                    <td>
+                        <model-viewer alt="View reconstruction results in 3D" src="./objects/bim406.glb" exposure="0.3" auto-rotate camera-controls></model-viewer>
+                    </td>
+                    </tr>
+
+                    
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="citation">
+                <p class="citation-title">
+                    Citation
+                </p>
+                <p class="citation-text">
+                    @inproceedings{PredictableContextPrior,</br>
+                        &ensp;&ensp;&ensp;&ensp;title={Surface Reconstruction from Point Clouds by Learning Predictive Context Priors},</br>
+                        &ensp;&ensp;&ensp;&ensp;author={Baorui Ma and Yu-Shen Liu and Matthias Zwicker and Zhizhong Han},</br>
+                        &ensp;&ensp;&ensp;&ensp;booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition},</br>
+                        &ensp;&ensp;&ensp;&ensp;year={2022}</br>
+                    }
+                </p>
+            </div>
+            <div class="citation">
+                <p class="citation-title">
+                    Related Work
+                </p>
+                <p class="citation-text">
+                    <strong>[1]</strong> Philipp Erler, Paul Guerrero, Stefan Ohrhallinger, Niloy J. Mitra, and Michael Wimmer. Points2Surf: Learning implicit surfaces from point clouds. In European Conference on Computer Vision, 2020. 1, 2, 5, 6, 8.</br>
+                    <strong>[2]</strong> Baorui Ma, Zhizhong Han, Yu-Shen Liu, Matthias Zwicker. Neural-Pull: Learning Signed Distance Functions from Point Clouds by Learning to Pull Space onto Surfaces. International Conference on Machine Learning (ICML), 2021, PMLR 139: 7246-7257.</br>
+                    <strong>[3]</strong> Baorui Ma, Yu-Shen Liu, Zhizhong Han. Reconstructing Surfaces for Sparse Point Clouds with On-Surface Priors. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2022.</br>
+                </p>
+            </div>
+            
+        </div>
+        <footer class="footer">
+            <div class="container">
+              <div class="content has-text-centered">
+              </div>
+              <div class="columns is-centered">
+                <div class="column is-8">
+                  <div class="content">
+                    <p style="text-align: center;">
+                      This webpage template is from <a href="https://lity20.github.io/DCCDIF_project_page/">DCCDIF</a>. 
+                      We sincerely thank <a href="https://github.com/lity20/">Tianyang Li</a> for this template.
+                    </p>
+                  </div>
+                </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </footer>
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    </body>
+
+</html>
